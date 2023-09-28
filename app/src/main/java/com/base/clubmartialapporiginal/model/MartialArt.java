@@ -1,5 +1,7 @@
 package com.base.clubmartialapporiginal.model;
 
+import androidx.annotation.NonNull;
+
 public class MartialArt {
 
     private  String martialArtname;
@@ -45,5 +47,11 @@ public class MartialArt {
 
     public void setMartialArtPrice(double martialArtPrice) {
         this.martialArtPrice = martialArtPrice;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return  getMartialArtID() + " " + getMartialArtname() + " " + getMartialArtPrice() + " " + getMartialArtColor();
     }
 }

@@ -6,6 +6,9 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="martial_art_name">Martial Art Name</string>
+    <string name="martial_art_price">Martial Art price</string>
+    <string name="martial_art_color">Martial Art color</string>
 
 
 </resources>

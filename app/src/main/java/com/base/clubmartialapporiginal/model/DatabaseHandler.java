@@ -96,7 +96,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public MartialArt returnAllMartialArtObject(int id){
+    public MartialArt returnMartialArtObjectById(int id){
 
 
         SQLiteDatabase database = getWritableDatabase();
