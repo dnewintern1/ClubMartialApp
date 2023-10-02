@@ -32,11 +32,13 @@ public class DeleteMartialArtActivity extends AppCompatActivity  implements Radi
 
         databaseHandler = new DatabaseHandler(DeleteMartialArtActivity.this);
 
+
         updateTheUserInterface();
     }
 
     private void updateTheUserInterface(){
-        ArrayList<MartialArt> allMartialArtObject = databaseHandler.returnAllMartialArtObject();
+        ArrayList<MartialArt> allMartialArtObject =
+                databaseHandler.returnAllMartialArtObject();
 
         RelativeLayout relativeLayout = new RelativeLayout(DeleteMartialArtActivity.this);
 
@@ -51,7 +53,7 @@ public class DeleteMartialArtActivity extends AppCompatActivity  implements Radi
             currentRadioButton.setText(martialArt.toString());
             radioGroup.addView(currentRadioButton);
         }
-        
+
         radioGroup.setOnCheckedChangeListener(DeleteMartialArtActivity.this);
 
         Button btnback = new Button(DeleteMartialArtActivity.this);
@@ -86,6 +88,7 @@ public class DeleteMartialArtActivity extends AppCompatActivity  implements Radi
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         databaseHandler.deleteMartialArtObjectFromDatabaseById(checkedId);
+        updateTheUserInterface();
         Toast.makeText(DeleteMartialArtActivity.this , "the martial art object is deleted", Toast.LENGTH_SHORT).show();
     }
 

@@ -53,7 +53,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void deleteMartialArtObjectFromDatabaseById(int id){
 
         SQLiteDatabase database = getWritableDatabase();
-        String deleteMartialArtSQLCommand = "delete from " + MARTIAL_ARTS_TABLE + " where " + ID_KEY + " = " + id;
+        String deleteMartialArtSQLCommand = "delete from " + MARTIAL_ARTS_TABLE +
+                                            " where " + ID_KEY + " = " + id;
 
 
         database.execSQL(deleteMartialArtSQLCommand);
@@ -64,10 +65,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase database = getWritableDatabase();
         String modifyMartialArtSQLCommand ="update " + MARTIAL_ARTS_TABLE +
-                " set" + NAME_KEY + " = '" + martialartName + "', "
-                + PRICE_KEY +" ='" + martialArtPrice + "' "
-                + COLOR_KEY + " ='" + martialArtColor + "' "
-                + "where" + ID_KEY + " = " + martialArtID;
+                " set " + NAME_KEY + " = '" + martialartName +
+                "', " + PRICE_KEY +" = '" + martialArtPrice +
+                "', " + COLOR_KEY + " = '" + martialArtColor +
+                "' " + "where " + ID_KEY + " = " + martialArtID;
 
         database.execSQL(modifyMartialArtSQLCommand);
         database.close();
@@ -77,8 +78,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public ArrayList<MartialArt> returnAllMartialArtObject(){
         SQLiteDatabase database = getWritableDatabase();
-        String sqlQueryCommanad = "select * from " + MARTIAL_ARTS_TABLE;
-        Cursor cursor = database.rawQuery(sqlQueryCommanad, null);
+        String sqlQueryCommand = "select * from " + MARTIAL_ARTS_TABLE;
+        Cursor cursor = database.rawQuery(sqlQueryCommand, null);
 
         ArrayList<MartialArt> martialArts = new ArrayList<>();
 
